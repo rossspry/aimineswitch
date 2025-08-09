@@ -23,3 +23,15 @@ ai:
   process_names:
     - ollama.exe
     - ollama
+
+
+# Optional: lolMiner settings (used when miner.kind: lolminer)
+# Make sure lolMiner is started with an API port, e.g.:
+#   lolMiner.exe --algo KASPA --pool stratum+tcp://pool:port --user WALLET.WORKER ^
+#       --apiport 4444 --apiallow 127.0.0.1
+miner_lolminer:
+  host: "127.0.0.1"
+  port: 4444
+  process_names:
+    - lolMiner.exe
+    - lolMiner

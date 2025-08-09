@@ -25,3 +25,10 @@ class Config:
 
         ai = d.get("ai", {})
         self.ai_process_names = ai.get("process_names", ["ollama.exe", "ollama"])
+
+
+        # lolMiner extras
+        lol = d.get("miner_lolminer", {})
+        self.lol_host = lol.get("host", "127.0.0.1")
+        self.lol_port = lol.get("port", 4444)
+        self.lol_process_names = lol.get("process_names", ["lolMiner.exe", "lolMiner"])

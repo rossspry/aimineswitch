@@ -65,3 +65,22 @@ Edit `config.yaml`:
 
 ## License
 MIT (for this MVP).
+
+
+## lolMiner (optional)
+To use lolMiner instead of T-Rex:
+1. Start lolMiner with an API port enabled, for example:
+   ```bat
+   lolMiner.exe --algo KASPA --pool stratum+tcp://pool:port --user WALLET.WORKER ^
+     --apiport 4444 --apiallow 127.0.0.1
+   ```
+2. Edit `config.yaml`:
+   ```yaml
+   miner:
+     kind: lolminer
+   miner_lolminer:
+     host: "127.0.0.1"
+     port: 4444
+     process_names: ["lolMiner.exe","lolMiner"]
+   ```
+> Note: If the API is unavailable, the adapter will attempt to terminate the lolMiner process as a fallback. For best results, enable the API.
