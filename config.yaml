@@ -1,0 +1,25 @@
+gpu_index: 0
+
+# Switch rules
+thresholds:
+  enter_ai_gpu_util: 25        # % util to consider "AI active"
+  enter_ai_mem_free_gb: 6      # if less than this free, assume AI needs priority
+  exit_ai_gpu_util: 15         # drop below this to exit AI mode
+  hysteresis_seconds: 15       # avoid flapping
+
+# Safety
+thermals:
+  max_gpu_temp_c: 85
+  cooloff_seconds: 20
+
+# Miner API (T-Rex)
+miner:
+  kind: trex
+  api_url: "http://127.0.0.1:4067"
+  resume_after_seconds: 2
+
+# Detect AI processes (add more names if you use vLLM/Comfy/etc.)
+ai:
+  process_names:
+    - ollama.exe
+    - ollama
